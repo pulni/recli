@@ -74,7 +74,7 @@ command :recommendations_for do |c|
   c.flag 'number_of_results', :desc => 'Number of Recommendet Products.', :default_value => "10"
   c.action do |global_options,options,args|
   	product_name = args.shift
-  	num = options[:number_results].to_i - 1
+  	num = options[:number_of_results].to_i - 1
     recom = Recommender.new
     res = recom.for(product_name)
     if res
