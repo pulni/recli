@@ -1,0 +1,114 @@
+#!/usr/bin/env ruby
+require 'gli'
+require 'recli'
+require 'recommender'
+require 'oj'
+require 'redis'
+require "awesome_print"
+require 'formatador'
+
+include GLI::App
+
+program_desc 'Command Line Recommendation'
+
+version Recli::VERSION
+
+subcommand_option_handling :normal
+arguments :strict
+
+
+command :load_data do |c|
+
+  c.desc 'filename to load data from'
+  c.default_value 'purchase_data.json'
+  c.flag :file
+  c.action do |global_options,options,args|
+
+    puts "Start loading file: #{options[:file]}".green
+    orders = Oj.load(File.read(options[:file]))
+
+    puts "Processing the Data".green
+    recom = Recommender.new
+    data_bar = Formatador::ProgressBar.new(orders.count) { |b| b.opts[:color] = "green" }
+
+    orders.each do |order|
+      product_names = Array.new
+
+      order["products"].flatten.each do |product|
+        product_names << product["name"]
+      end
+
+      recom.user_products.add_set(order["user_id"], product_names)
+      data_bar.increment
+
+    end
+
+    # process all items (equivalent to recommender.process!)
+    puts "Creating the Product Tupels".green
+    num_items = (all_items = recom.all_items).size
+    process_bar = Formatador::ProgressBar.new(num_items) { |b| b.opts[:color] = "green" }
+
+    all_items.each_with_index do |item_id, n|
+      recom.process_item!(item_id)
+      process_bar.increment
+    end
+
+    puts "All products processed".green
+  end
+end
+
+desc 'Clear Database'
+command :clear_database do |c|
+  c.action do |global_options,options,args|
+    Recommendify.redis.keys("recommendify*").each do |k|
+      Recommendify.redis.del(k)
+    end
+  end
+end
+
+desc 'Get a Recommendation for a specific Product'
+arg 'product'
+arg_name 'Name of the Product'
+command :recommendations_for do |c|
+
+  c.flag 'number_of_results', :desc => 'Number of Recommendet Products.', :default_value => "10"
+  c.action do |global_options,options,args|
+  	product_name = args.shift
+  	num = options[:number_results].to_i - 1
+    recom = Recommender.new
+    res = recom.for(product_name)
+    if res
+		table_data = []
+    	res[0..num].each do |p|
+    		table_data << {:name => p.item_id, :similarity => p.similarity}
+    	end
+    	Formatador.display_table(table_data)
+    else
+    	puts "No Recommendation found for product #{options[:product]}.".red
+	end
+  end
+end
+
+pre do |global,command,options,args|
+  # Pre logic here
+  # Return true to proceed; false to abort and not call the
+  # chosen command
+  # Use skips_pre before a command to skip this block
+  # on that command only
+  Recommendify.redis = Redis.new(:host => "localhost", :port => 6379, :db => 15)
+  true
+end
+
+post do |global,command,options,args|
+  # Post logic here
+  # Use skips_post before a command to skip this
+  # block on that command only
+end
+
+on_error do |exception|
+  # Error logic here
+  # return false to skip default error handling
+  true
+end
+
+exit run(ARGV)

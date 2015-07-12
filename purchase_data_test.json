@@ -1,0 +1,228 @@
+[
+  {
+    "user_id": 321768,
+    "date": "2015-01-17",
+    "products": [
+      {
+        "name": "Raw Organic Coconut Water (small)",
+        "price": 3
+      },
+      {
+        "name": "Free-range Whole Chicken",
+        "price": 10
+      },
+      {
+        "name": "Organic Truly Raw Cacao Powder",
+        "price": 4
+      },
+      {
+        "name": "Kentish Ale Wholegrain Mustard",
+        "price": 4
+      },
+      {
+        "name": "Organic Farmers Long Aubergines",
+        "price": 3
+      },
+      {
+        "name": "Organic Ginger",
+        "price": 1
+      },
+      {
+        "name": "Organic Vegan Hazelnut Drink",
+        "price": 3
+      }
+    ]
+  },
+  {
+    "user_id": 745257,
+    "date": "2015-06-28",
+    "products": [
+      {
+        "name": "Two Spinach & Ricotta Rolls",
+        "price": 5
+      },
+      {
+        "name": "Gala Apples",
+        "price": 3
+      },
+      {
+        "name": "Hand-picked Cornish White Crab Meat (large)",
+        "price": 17
+      }
+    ]
+  },
+  {
+    "user_id": 278349,
+    "date": "2015-04-25",
+    "products": [
+      {
+        "name": "Hot Chilli Bomb",
+        "price": 7
+      },
+      {
+        "name": "Chilli & Garlic Sea Salt Mini Kilner Jar",
+        "price": 7
+      },
+      {
+        "name": "Premium Extra Virgin Olive Oil Container",
+        "price": 10
+      },
+      {
+        "name": "Organic Pork Leg Mini Roast",
+        "price": 18
+      },
+      {
+        "name": "Roasted Lightly Salted Fava Beans",
+        "price": 3
+      },
+      {
+        "name": "Organic Carrot, Red Lentil & Quinoa Ready-To-Eat Baby Food",
+        "price": 2
+      },
+      {
+        "name": "Organic Semi-Skimmed Milk (2L)",
+        "price": 2
+      },
+      {
+        "name": "Raw Organic Activated Buckwheat Groats",
+        "price": 3
+      },
+      {
+        "name": "Black Pudding",
+        "price": 5
+      }
+    ]
+  },
+  {
+    "user_id": 150183,
+    "date": "2015-05-15",
+    "products": [
+      {
+        "name": "3 Berry Jam",
+        "price": 4
+      },
+      {
+        "name": "Organic Parasol Powder Mushrooms",
+        "price": 3
+      },
+      [
+        {
+          "name": "Organic Pork Chops",
+          "price": 10
+        },
+        {
+          "name": "Maca, Vanilla & Cacao Nibs 74% Organic Dark Chocolate",
+          "price": 4
+        },
+        {
+          "name": "Organic Traditional Pork Sausages",
+          "price": 7
+        },
+        {
+          "name": "Organic Cinnamon Quills",
+          "price": 2
+        },
+        {
+          "name": "Organic Gluten-Free Pork & Apple Sausages",
+          "price": 7
+        },
+        {
+          "name": "Organic Yellow Courgettes",
+          "price": 2
+        },
+        {
+          "name": "Organic Country Taste Beef Tomatoes",
+          "price": 2
+        }
+      ]
+    ]
+  },
+  {
+    "user_id": 172815,
+    "date": "2015-01-02",
+    "products": [
+      {
+        "name": "Spicy Tomato Handmade Chutney",
+        "price": 4
+      },
+      {
+        "name": "Small Fruit Box",
+        "price": 7
+      },
+      {
+        "name": "Rosemary & Thyme Roasted Pitta Chips",
+        "price": 2
+      },
+      {
+        "name": "Hot Banana Chutney",
+        "price": 4
+      }
+    ]
+  },
+  {
+    "user_id": 379824,
+    "date": "2015-03-27",
+    "products": [
+      {
+        "name": "Organic Kalamon Olive Paste",
+        "price": 3
+      },
+      {
+        "name": "Orange, Fennel & Chilli Salt",
+        "price": 3
+      },
+      {
+        "name": "Handmade Beef Biltong with Garlic & Chilli",
+        "price": 3
+      },
+      {
+        "name": "Mango",
+        "price": 2
+      },
+      {
+        "name": "Organic Raw Almond Wasabi Crackits",
+        "price": 5
+      },
+      {
+        "name": "Mulberries, Chia Seeds & Spirulina 74% Organic Dark Chocolate",
+        "price": 4
+      },
+      {
+        "name": "Organic Packham Pears",
+        "price": 3
+      }
+    ]
+  },
+  {
+    "user_id": 438741,
+    "date": "2015-06-24",
+    "products": [
+      {
+        "name": "Cold-Pressed Raw Coffee Almond Mylk",
+        "price": 6
+      },
+      {
+        "name": "Organic Stewing Beef Steak",
+        "price": 7
+      }
+    ]
+  },
+  {
+    "user_id": 505407,
+    "date": "2015-06-21",
+    "products": [
+      {
+        "name": "Wild Fennel & Lemon Sea Salt",
+        "price": 4
+      },
+      {
+        "name": "Tandoori Masala Spice Pot",
+        "price": 4
+      },
+      {
+        "name": "Organic Vegan Unsweetened Almond Drink",
+        "price": 3
+      }
+    ]
+  }
+]

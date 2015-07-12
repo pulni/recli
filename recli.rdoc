@@ -1,0 +1,5 @@
+= recli
+
+Generate this with
+    recli rdoc
+After you have described your command line interface
