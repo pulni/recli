@@ -38,7 +38,7 @@ command :load_data do |c|
         product_names << product["name"]
       end
 
-      recom.user_products.add_set(order["user_id"], product_names)
+      recom.user_products.add_set(order["user_id"], product_names) unless product_names.empty?
       data_bar.increment
 
     end
